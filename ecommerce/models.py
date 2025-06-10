@@ -37,6 +37,8 @@ class Product(BaseModel):
     category = models.ForeignKey(Category,related_name='products',on_delete=models.SET_NULL,null=True,blank=True)
     amount = models.PositiveIntegerField(default=1)
     
+
+    
     def __str__(self):
         return self.name
 
@@ -86,7 +88,7 @@ class AttributeValue(BaseModel):
 class Attribute(BaseModel):
     attribute_key = models.ForeignKey(AttributeKey,on_delete=models.CASCADE)
     attribute_value = models.ForeignKey(AttributeValue,on_delete=models.CASCADE)
-    product = models.ForeignKey(Product,on_delete=models.CASCADE)
+    product = models.ForeignKey(Product,on_delete=models.CASCADE,related_name='attributes')
     
     def __str__(self):
         return f'{self.product.name} - {self.attribute_key.key_name} - {self.attribute_value.value_name}'
@@ -94,6 +96,6 @@ class Attribute(BaseModel):
 
 
 
-
+# product.attributes.all()
 # 2 , 10,10_000
 # 3,12,5

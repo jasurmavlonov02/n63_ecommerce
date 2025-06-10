@@ -2,7 +2,7 @@ from django.shortcuts import render
 from django.views import View
 from django.views.generic import DetailView
 
-from .models import Category,Product
+from .models import Category,Product,Attribute
 # Create your views here.
 
 
@@ -26,7 +26,10 @@ class Index(View):
         }
         if category_slug:
             products = Product.objects.filter(category__slug = category_slug)
-            return render(request,'ecommerce/product-list.html',{'products':products})
+            context = {
+                'products':products,
+            }
+            return render(request,'ecommerce/product-list.html',context)
         
         return render(request,'ecommerce/index.html',context)
       

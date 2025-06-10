@@ -1,6 +1,3 @@
-postgresql config
+product attribute
 
-dotenv
-.gitignore
-
-requirements.txt
+pagination

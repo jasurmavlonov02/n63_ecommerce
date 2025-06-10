@@ -141,7 +141,7 @@ env.bak/
 venv.bak/
 
 keybindings.json
-ç
+
 # Spyder project settings
 .spyderproject
 .spyproject
