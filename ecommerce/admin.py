@@ -5,7 +5,7 @@ from import_export.admin import ImportExportModelAdmin
 # Register your models here.
 
 # admin.site.register(Category)
-# admin.site.register(Product)
+admin.site.register(Product)
 admin.site.register(Image)
 
 @admin.register(Category)

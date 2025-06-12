@@ -36,6 +36,7 @@ class Product(BaseModel):
     discount = models.PositiveIntegerField(default=0)
     category = models.ForeignKey(Category,related_name='products',on_delete=models.SET_NULL,null=True,blank=True)
     amount = models.PositiveIntegerField(default=1)
+    code = models.CharField(max_length=255,null=True,blank=True)
     
 
     
